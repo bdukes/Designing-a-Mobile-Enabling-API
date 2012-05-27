@@ -11,6 +11,7 @@
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
     <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/shCoreRDark.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -31,7 +32,7 @@
     <div class="step slide" data-x="1000">
         <q>What does it <strong>look like</strong> to use the Services Framework?</q>
     </div>
-    <div class="step slide" data-x="2000">
+    <div id="technology-overview" class="step slide" data-x="2000">
         <h3>Technology Overview</h3>
         <ul>
             <li>
@@ -44,7 +45,47 @@
             <li>
                 Register <strong>routes</strong> to direct requests to controller <strong>actions</strong>
             </li>
+            <li>
+                Very easy to provide <strong><abbr title="JavaScript Object Notation">JSON</abbr></strong> responses
+                <ul><li><strong>Web API</strong> will provide more serialization options</li></ul>
+            </li>
         </ul>
+    </div>
+    <div id="controllers" class="step slide" data-x="3000">
+        <h3>Controllers</h3>
+        <ul>
+            <li>
+                Inherit from <code>DnnController</code>
+            </li>
+            <li>
+                Class name must end with <code>Controller</code>
+            </li>
+            <li>
+                All <code>public</code> methods are actions
+                <ul><li>Opt out with <code>NonActionAttribute</code></li></ul>
+            </li>
+            <li>
+                Actions typically return <code>ActionResult</code>
+            </li>
+        </ul>
+    </div>
+    <div id="controller-example" class="step slide code-slide" data-x="4100">
+        <h3>Controller Example</h3>
+        <pre class="brush: csharp">
+        namespace Example.Dnn.Services {
+            using System.Web.Mvc;
+            using DotNetNuke.Web.Services;
+
+            public class ExampleController : DnnController {
+                public ActionResult HelloWorld() {
+                    return Json(new { 
+                        number = 1, 
+                        text = "Hi!",
+                    });
+                }
+            }
+        }
+        </pre>
     </div>
 </div>
 
@@ -52,5 +93,8 @@
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
 <script src="js/impress.js"></script>
+<script src="js/shCore.js"></script>
+<script src="js/shBrushCSharp.js"></script>
+<script>SyntaxHighlighter.all();</script>
 </body>
 </html>
