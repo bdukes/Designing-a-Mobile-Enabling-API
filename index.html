@@ -47,7 +47,7 @@
             </li>
             <li>
                 Very easy to provide <strong><abbr title="JavaScript Object Notation">JSON</abbr></strong> responses
-                <ul><li><strong>Web API</strong> will provide more serialization options</li></ul>
+                <ul><li><strong>Web API</strong> would provide more serialization options</li></ul>
             </li>
         </ul>
     </div>
@@ -105,11 +105,10 @@
             </li>
             <li>
                 Can define route <strong>constraints</strong>, also
-<ul>
-  <li>Regular expression</li>
-  <li>Implement <code>IRouteConstraint</code>'s <code>Match</code> method</li>
-</ul>
-
+                <ul>
+                  <li>Regular expression</li>
+                  <li>Implement <code>IRouteConstraint</code>'s <code>Match</code> method</li>
+                </ul>
             </li>
         </ul>
     </div>
@@ -150,6 +149,44 @@
                 "Example.Dnn.Services",
             });
         </pre>
+    </div>
+    <div id="authentication" class="step slide" data-x="8600">
+        <h3>Authentication</h3>
+        <ul>
+            <li>
+                <strong>Basic</strong> access authentication
+                <ul>
+                    <li>Requires <abbr title="Secure HyperText Transport Protocol">HTTPS</abbr>/<abbr title="Secure Sockets Layer">SSL</abbr> for security</li>
+                    <li>Passes credentials on each request</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Digest</strong> access authentication
+                <ul>
+                    <li>Uses MD5 for security</li>
+                    <li>Windows Phone 7 does not natively support digest</li>
+                </ul>
+            </li>
+            <li>
+                More to come
+            </li>
+            <li>
+                Anti-Forgery Token
+            </li>
+        </ul>
+    </div>
+    <div id="authorization" class="step slide" data-x="9600">
+        <h3>Authorization</h3>
+        <ul>
+            <li>
+                <code>DnnAuthorizeAttribute</code>
+                <ul>
+                    <li>Disallows anonymous access by default</li>
+                    <li>Can provide static list of role names</li>
+                    <li>Can limit to host access only</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </div>
 
