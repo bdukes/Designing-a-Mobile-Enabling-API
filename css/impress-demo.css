@@ -120,7 +120,7 @@ li {
     margin-bottom: 0.5em;
 }
 li li {
-    margin-left: 1em;
+    margin-left: 0.5em;
 }
 li ul {
     list-style: none;

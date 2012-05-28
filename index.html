@@ -186,7 +186,88 @@
                     <li>Can limit to host access only</li>
                 </ul>
             </li>
+            <li>
+                <code>AcceptVerbsAttribute</code>
+                <ul>
+                    <li>Provide bitwise combination of allowed verbs</li>
+                    <li>Can also use <code>HttpPost</code>, <code>HttpGet</code>, etc.</li>
+                </ul>
+            </li>
         </ul>
+    </div>
+    <div id="authorization-2" class="step slide" data-x="10600">
+        <h3>Authorization</h3>
+        <ul>
+            <li>
+                <code>SupportedModulesAttribute</code>
+                <ul>
+                    <li>Comma-separated <strong>desktop module</strong> names</li>
+                    <li>
+                        Requires <code>ModuleId</code> and <code>TabId</code> in request
+                        <ul>
+                            <li>Can be header, query-string, form value or cookie</li>
+                            <li><code>beforeSend: sf.setModuleHeaders</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <code>DnnModuleAuthorizeAttribute</code>
+                <ul>
+                    <li>Define <strong>access level</strong> and/or <strong>permission key</strong></li>
+                    <li>Defaults to <strong>Host</strong> access level</li>
+                    <li>Requires <code>ModuleId</code> and <code>TabId</code> in request</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="dnn-context" class="step slide" data-x="11600">
+        <h3><abbr title="DotNetNuke">DNN</abbr> Context</h3>
+        <ul>
+            <li><code>UserInfo</code> (and authentication)</li>
+            <li><code>ActiveModule</code></li>
+            <li>
+                <code>PortalSettings</code>
+                <ul>
+                    <li><code>ActiveTab</code></li>
+                    <li><code>HomeDirectoryMapPath</code></li>
+                    <li><code>AdministratorId</code></li>
+                    <li><code>AdministratorRoleName</code></li>
+                    <li><code>CultureCode</code></li>
+                    <li><code>PortalAlias</code></li>
+                    <li>etc.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="usage-request-scripts" class="step slide code-slide" data-x="12700">
+        <h3>Usage &#x2013; Request Scripts</h3>
+        <pre class="brush: csharp">
+        using DotNetNuke.Framework;
+
+        public class MyModuleControl : ModuleView&lt;MyViewModel> {
+            protected override void OnInit(EventArgs e) {
+                base.OnInit(e);
+
+                var sf = ServicesFramework.Instance;
+                sf.RequestAjaxScriptSupport();
+                sf.RequestAjaxAntiForgerySupport();
+            }
+        }
+        </pre>
+    </div>
+    <div id="usage-ajax-request" class="step slide code-slide" data-x="13900">
+        <h3>Usage &#x2013; Ajax Request</h3>
+        <pre class="brush: js">
+        var sf = $.ServicesFramework(&lt;%:ModuleContext.ModuleId%>);
+        $.ajax({
+            type: 'POST',
+            url: sf.getServiceRoot('Example/S') + 'Example/Hello',
+            beforeSend: sf.setModuleHeaders,
+            data: sf.getAntiForgeryProperty({ /*...*/ })
+        }).done(function (data) { /*...*/ })
+          .fail(function (xhr, status) { /*...*/ });
+        </pre>
     </div>
 </div>
 
@@ -196,6 +277,7 @@
 <script src="js/impress.js"></script>
 <script src="js/shCore.js"></script>
 <script src="js/shBrushCSharp.js"></script>
+<script src="js/shBrushJScript.js"></script>
 <script>SyntaxHighlighter.all();</script>
 </body>
 </html>
