@@ -10,8 +10,7 @@
     <meta name="author" content="Brian Dukes">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet">
-    <link href="css/impress-demo.css" rel="stylesheet">
-    <link href="css/shCoreRDark.css" rel="stylesheet">
+    <link href="css/combined-styles.css" rel="stylesheet">
     
     <link rel="shortcut icon" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -277,10 +276,16 @@
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
-<script src="js/impress.js"></script>
-<script src="js/shCore.js"></script>
-<script src="js/shBrushCSharp.js"></script>
-<script src="js/shBrushJScript.js"></script>
-<script>SyntaxHighlighter.all();</script>
+<script src="js/LAB.min.js"></script>
+<script>
+$LAB
+.script("js/impress.js")
+.script("js/shCore.js").wait()
+.script("js/shBrushCSharp.js")
+.script("js/shBrushJScript.js")
+.wait(function () {
+    SyntaxHighlighter.all();
+});
+</script>
 </body>
 </html>
