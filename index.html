@@ -9,7 +9,7 @@
     <meta name="description" content="Use the new DotNetNuke Service Framework to enable your modules and other extensions to power mobile applications and other new and unique workflows.  While it's always been possible to have various sorts of web services alongside your module, the Service Framework provides a common pattern to enable smart authentication and a clean development model.  This presentation will demonstrate what it looks like to use the Service Framework to develop an API that exposes rich functionality to a wide variety of potential clients, including native mobile applications.">
     <meta name="author" content="Brian Dukes">
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold" rel="stylesheet">
     <link href="css/combined-styles.css" rel="stylesheet">
     
     <link rel="shortcut icon" href="favicon.png">
@@ -21,17 +21,21 @@
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div>
 <div id="impress">
-    <div class="step slide" data-x="0">
+    <div id="title" class="step slide" data-x="0">
         <hgroup>
             <h1>Designing a Mobile-Enabling API</h1>
             <h2>Brian Dukes, Engage Software</h2>
             <h3>Charlotte Day of DotNetNuke 2012</h3>
         </hgroup>
+        <p class="sponsors">
+            <a href="http://www.dotnetnuke.com/"><img src="img/DotNetNuke.png" alt="DotNetNuke" /></a>
+            <a href="http://www.PowerDNN.com/"><img src="img/PowerDnn.png" alt="PowerDNN" /></a>
+        </p>
     </div>
-    <div class="step slide" data-x="1000">
-        <q>What does it <strong>look like</strong> to use the Services Framework?</q>
+    <div id="services-framework" class="step" data-x="1000" data-rotate="90">
+        <q>What does it <strong>look like</strong> to use the <em>Services Framework?</em></q>
     </div>
-    <div id="technology-overview" class="step slide" data-x="2000">
+    <div id="technology-overview" class="step" data-x="2000">
         <h3>Technology Overview</h3>
         <ul>
             <li>
@@ -50,7 +54,7 @@
             </li>
         </ul>
     </div>
-    <div id="controllers" class="step slide" data-x="3000">
+    <div id="controllers" class="step" data-x="3000">
         <h3>Controllers</h3>
         <ul>
             <li>
@@ -68,7 +72,7 @@
             </li>
         </ul>
     </div>
-    <div id="controller-example" class="step slide code-slide" data-x="4100">
+    <div id="controller-example" class="step code-step second-step" data-x="3000" data-z="-1000" data-rotate="90">
         <h3>Controller Example</h3>
         <pre class="brush: csharp">
         namespace Example.Dnn.Services {
@@ -86,7 +90,7 @@
         }
         </pre>
     </div>
-    <div id="routes" class="step slide" data-x="5200">
+    <div id="routes" class="step" data-x="4000">
         <h3>Routes</h3>
         <ul>
             <li>
@@ -111,7 +115,7 @@
             </li>
         </ul>
     </div>
-    <div id="route-example" class="step slide code-slide" data-x="6300">
+    <div id="route-example" class="step code-step second-step" data-x="4000" data-z="-1000" data-rotate="90">
         <h3>Route Example</h3>
         <pre class="brush: csharp">
         /*/DesktopModules/Example/S/API/Example.ashx/Hello*/
@@ -131,7 +135,7 @@
         }
         </pre>
     </div>
-    <div id="route-example-with-defaults-and-constraint" class="step slide code-slide" data-x="7500">
+    <div id="route-example-with-defaults-and-constraint" class="step code-step second-step" data-x="4000" data-z="-2000" data-rotate="90">
         <h3>Route Example with Defaults and Constraint</h3>
         <pre class="brush: csharp">
         /*/DesktopModules/Example/Services/API/Ex/Find/123*/
@@ -149,7 +153,7 @@
             });
         </pre>
     </div>
-    <div id="authentication" class="step slide" data-x="8600">
+    <div id="authentication" class="step" data-x="5000">
         <h3>Authentication</h3>
         <ul>
             <li>
@@ -174,7 +178,7 @@
             </li>
         </ul>
     </div>
-    <div id="authorization" class="step slide" data-x="9600">
+    <div id="authorization" class="step" data-x="6000">
         <h3>Authorization</h3>
         <ul>
             <li>
@@ -194,7 +198,7 @@
             </li>
         </ul>
     </div>
-    <div id="authorization-2" class="step slide" data-x="10600">
+    <div id="authorization-2" class="step second-step" data-x="6000" data-z="-1000">
         <h3>Authorization</h3>
         <ul>
             <li>
@@ -220,7 +224,7 @@
             </li>
         </ul>
     </div>
-    <div id="dnn-context" class="step slide" data-x="11600">
+    <div id="dnn-context" class="step" data-x="7000">
         <h3><abbr title="DotNetNuke">DNN</abbr> Context</h3>
         <ul>
             <li><code>UserInfo</code> (and authentication)</li>
@@ -239,7 +243,7 @@
             </li>
         </ul>
     </div>
-    <div id="usage-request-scripts" class="step slide code-slide" data-x="12700">
+    <div id="usage-request-scripts" class="step code-step second-step" data-x="8000" data-z="-1000" data-rotate="90">
         <h3>Usage &#x2013; Request Scripts</h3>
         <pre class="brush: csharp">
         using DotNetNuke.Framework;
@@ -255,7 +259,7 @@
         }
         </pre>
     </div>
-    <div id="usage-ajax-request" class="step slide code-slide" data-x="13900">
+    <div id="usage-ajax-request" class="step code-step second-step" data-x="8000" data-z="-2000" data-rotate="90">
         <h3>Usage &#x2013; Ajax Request</h3>
         <pre class="brush: js">
         var sf = $.ServicesFramework(&lt;%:ModuleContext.ModuleId%>);
@@ -268,8 +272,27 @@
           .fail(function (xhr, status) { /*...*/ });
         </pre>
     </div>
-    <div id="questions" class="step slide" data-x="15000">
-        <q>Any <strong>questions?</strong></q>
+    <div id="sponsors" class="step" data-x="9000" data-rotate="180">
+        <h3>Thanks to all our Generous Sponsors!</h3>
+        <a href="http://www.dotnetnuke.com/"><img src="img/DotNetNuke.png" alt="DotNetNuke" /></a>
+        <a href="http://www.PowerDNN.com/"><img src="img/PowerDnn.png" alt="PowerDNN" /></a>
+        <a href="http://uncc.edu/"><img src="img/UNC%20Charlotte.png" alt="University of North Carolina at Charlotte" /></a>
+        <a href="http://www.engagesoftware.com/"><img src="img/Engage.png" alt="Engage Software" /></a>
+        <a href="http://www.aspose.com/"><img src="img/Aspose.png" alt="Aspose" /></a>
+        <a href="http://www.packflash.com/"><img src="img/PackFlash.png" alt="PackFlash" /></a>
+        <a href="http://www.arrownuke.com/"><img src="img/Arrow%20Consulting%20%26%20Design.png" alt="Arrow Consulting &amp; Design" /></a>
+        <a href="http://www.appliedi.net/"><img src="img/Applied%20Innovations.png" alt="Applied Innovations" /></a>
+        <a href="http://www.cfwebmasters.com/"><img src="img/CF%20Webmasters.png" alt="Cape Fear Webmasters" /></a>
+        <a href="http://enlivenstudio.com/"><img src="img/enliven.png" alt="Enliven Studio" /></a>
+        <a href="http://coolcoyotes.com/"><img src="img/Cool%20Coyotes.png" alt="Cool Coyotes" /></a>
+        <a href="http://www.iowacomputergurus.com/"><img src="img/Iowa%20Computer%20Gurus.png" alt="Iowa Computer Gurus" /></a>
+        <a href="http://www.roberthalftechnology.com/"><img src="img/Robert%20Half%20Technology.png" alt="Robert Half Technology" /></a>
+        <a href="http://dnndev.com/"><img src="img/DNN%20Dev.jpg" alt="DNNDev" /></a>
+        <a href="https://www.technicalcommunity.com/Pages/default.aspx"><img src="img/Microsoft%20UGSS.png" alt="Microsoft User Group Support Services" /></a>
+        <a href="http://www.infragistics.com/"><img src="img/Infragistics.png" alt="Infragistics" /></a>
+        <a href="http://logicaladvantage.com/"><img src="img/Logical%20Advantage.png" alt="Logical Advantage" /></a>
+        <a href="http://www.spiffywebteam.com/"><img src="img/Spiffy.png" alt="Spiffy Web Team" /></a>
+        <a href="http://www.pointclick.net/"><img src="img/PointClick%20Technologies.png" alt="PointClick Technologies" /></a>
     </div>
 </div>
 

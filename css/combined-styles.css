@@ -60,7 +60,7 @@ table {
     want to leave anybody behind.
 */
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     min-height: 740px;
     
     background: rgb(215, 215, 215);
@@ -77,30 +77,6 @@ body {
 */
 b, strong { font-weight: bold }
 i, em { font-style: italic }
-
-/*
-    ... and give links a nice look.
-*/
-a {
-    color: inherit;
-    text-decoration: none;
-    padding: 0 0.1em;
-    background: rgba(255,255,255,0.5);
-    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
-    border-radius: 0.2em;
-    
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
-}
-
-a:hover,
-a:focus {
-    background: rgba(255,255,255,1);
-    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
-}
 
 h1, h2, h3, h4, h5, h6 {
     font-weight:bold;
@@ -160,7 +136,8 @@ code {
 .step {
     position: relative;
     width: 900px;
-    padding: 40px;
+    height: 700px;
+    padding: 40px 60px;
     margin: 20px auto;
 
     -webkit-box-sizing: border-box;
@@ -169,9 +146,12 @@ code {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', georgia, serif;
-    font-size: 48px;
-    line-height: 1.5;
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
 }
 
 .impress-enabled .step {
@@ -194,29 +174,20 @@ code {
 .slide {
     display: block;
 
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
-
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .3);
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
 }
 
-.code-slide {
+.code-step {
     width: 1100px;
 }
+.impress-enabled .second-step {
+    opacity: 0;    
+}
 
-.slide q {
+q {
     display: block;
     font-size: 50px;
     line-height: 72px;
@@ -224,13 +195,30 @@ code {
     margin-top: 100px;
 }
 
-.slide q strong {
+q strong {
     white-space: nowrap;
 }
 
-#step-1 h1 {
+#title h1 {
     line-height: 72px;
     margin: 100px 0 0 0;
+}
+#title .sponsors {
+    text-align: center;
+}
+#services-framework {
+    text-align: center;
+}
+#services-framework em {
+    font-style: normal;
+    font-size: 1.5em;
+}
+#sponsors {
+    vertical-align: central;
+    text-align: center;
+}
+#sponsors img {
+    max-width: 300px;
 }
 
 .hint {
@@ -296,7 +284,7 @@ code {
 /*
     ... and we will show it when the first step is active.
 */
-.impress-on-step-1 .hint {
+.impress-on-title .hint {
     /*
         We remove the transparency and position the hint in its default fixed
         position.
