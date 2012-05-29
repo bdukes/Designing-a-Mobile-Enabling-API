@@ -59,17 +59,22 @@ table {
     And yes, there is a lot of repetition there because of -prefixes but we don't
     want to leave anybody behind.
 */
-body {
+html {
     font-family: 'Open Sans', Arial, sans-serif;
-    min-height: 740px;
     
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));    
+    background-color: rgb(215, 215, 215);
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background-image: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background-image:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background-image:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background-image:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background-image:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+}
+body {
+    min-height: 740px;
+    background-image: url(../img/Day%20of%20DNN.png), url(../img/charlotte.png), url(../img/QCDUG.png);
+    background-position: left top, right 500px, left 550px;
+    background-repeat: no-repeat;
 }
 
 /*
