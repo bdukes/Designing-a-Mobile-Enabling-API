@@ -73,7 +73,7 @@ html {
 body {
     min-height: 740px;
     background-image: url(../img/Day%20of%20DNN.png), url(../img/charlotte.png), url(../img/QCDUG.png);
-    background-position: left top, right 500px, left 550px;
+    background-position: left top, right bottom, left bottom;
     background-repeat: no-repeat;
 }
 
