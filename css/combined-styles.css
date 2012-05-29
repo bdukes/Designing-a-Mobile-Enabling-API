@@ -213,12 +213,15 @@ q strong {
     font-style: normal;
     font-size: 1.5em;
 }
-#sponsors {
-    vertical-align: central;
+#sponsors.step {
     text-align: center;
+    padding: 0;
 }
-#sponsors img {
-    max-width: 300px;
+#sponsors h3 {
+    margin: 0;
+}
+#sponsors a#dnn-logo img {
+    width: 420px;
 }
 
 .hint {
