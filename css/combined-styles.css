@@ -286,8 +286,8 @@ q strong {
 
 /*
     Now we 'enable' the hint when presentation is initialized ...
-*/
 .impress-enabled .hint { display: block }
+*/
 
 /*
     ... and we will show it when the first step is active.
