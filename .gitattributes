@@ -47,6 +47,3 @@
 *.fsproj text=auto merge=union 
 *.dbproj text=auto merge=union 
 *.sln text=auto eol=crlf merge=union 
-
-### Your repo appears to have been created with autocrlf=false or has mixed line endings
-core.eol = crlf
