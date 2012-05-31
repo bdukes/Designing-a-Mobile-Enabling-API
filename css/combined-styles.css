@@ -134,8 +134,14 @@ code {
     margin-bottom: 10px;
 }
 
-.impress-supported .fallback-message {
+.impress-supported .fallback-message, .fallback-message .caniuse-msg {
     display: none;
+}
+.fallback-message .caniuse-nfo, #fallback-browsers ul {
+    text-align:center;
+}
+#fallback-browsers li {
+    display:inline;
 }
 
 .step {
