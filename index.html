@@ -17,8 +17,15 @@
 </head>
 <body class="impress-not-supported">
 <div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    <p>Your browser <strong>doesn't support the features required</strong> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest version of one of the following browsers:</p>
+    <div id="fallback-browsers">
+        <ul>
+            <li><a href="http://www.google.com/chrome/">Chrome</a></li>
+            <li><a href="http://www.apple.com/safari/">Safari</a></li>
+            <li><a href="http://www.firefox.com/">Firefox</a></li>
+        </ul>
+    </div>
 </div>
 <div id="impress">
     <div id="title" class="step slide" data-x="0">
@@ -308,7 +315,8 @@ $LAB
 .script("js/shBrushJScript.js")
 .wait(function () {
     SyntaxHighlighter.all();
-});
+    window.h5pCaniuse = function(a) { document.getElementById("fallback-browsers").innerHTML=a.html; };
+}).script("http://api.html5please.com/csstransforms3d+classlist+dataset.json?callback=h5pCaniuse&texticon&nocss&html");
 </script>
 </body>
 </html>
