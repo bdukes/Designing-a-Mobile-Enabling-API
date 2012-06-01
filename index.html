@@ -341,7 +341,7 @@ $LAB
 .script("js/shBrushCSharp.js")
 .script("js/shBrushJScript.js")
 .wait(function () {
-    SyntaxHighlighter.all();
+    SyntaxHighlighter.highlight();
     window.h5pCaniuse = function(a) { document.getElementById("fallback-browsers").innerHTML=a.html; };
 }).script("http://api.html5please.com/csstransforms3d+classlist+dataset.json?callback=h5pCaniuse&texticon&nocss&html");
 </script>
