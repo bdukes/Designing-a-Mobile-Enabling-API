@@ -65,7 +65,7 @@ namespace ServicesFrameworkClientExample
         public void LoadData()
         {
             var webClient = new WebClient();
-            webClient.DownloadStringCompleted += (sender, args) =>
+            webClient.UploadStringCompleted += (sender, args) =>
                 {
                     foreach (var item in JsonConvert.DeserializeObject<ItemViewModel[]>(args.Result))
                     {
@@ -75,7 +75,7 @@ namespace ServicesFrameworkClientExample
                     this.IsDataLoaded = true;
                 };
 
-            webClient.UploadStringAsync(new Uri("http://dnn6.dev/DesktopModules/Engage/ServicesFrameworkExampleImplementation/API/Items/Get"), "POST", string.Empty);
+            webClient.UploadStringAsync(new Uri("http://dnn6.dev/DesktopModules/Engage/ServicesFrameworkExampleImplementation/API/Items.ashx/Get"), "POST", string.Empty);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

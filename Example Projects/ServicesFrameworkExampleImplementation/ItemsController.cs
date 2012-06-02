@@ -8,6 +8,7 @@
 // THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 // DEALINGS IN THE SOFTWARE.
+
 namespace E
 {
     using System.Web.Mvc;
@@ -15,10 +16,9 @@ namespace E
     using DotNetNuke.Web.Services;
 
     [DnnAuthorize(AllowAnonymous = true)]
-    public class ExampleController : DnnController
+    public class ItemsController : DnnController
     {
-        [HttpGet][HttpPost]
-        public ActionResult Index()
+        public ActionResult Get()
         {
             return
                 Json(

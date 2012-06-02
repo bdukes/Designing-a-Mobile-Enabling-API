@@ -131,7 +131,9 @@
     <Content Include="Uninstall.SqlDataProvider" />
     <Content Include="Providers\DataProviders\SqlDataProvider\1.0.0.SqlDataProvider" />
     <Content Include="References\DotNetNuke.dll" />
-    <None Include="EngageServicesFrameworkExampleImplementation.5.dnn" />
+    <None Include="EngageServicesFrameworkExampleImplementation.5.dnn">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EngageServicesFrameworkExampleImplementation.Build" />
     <None Include="Correctness, Design, Globalization, Security, and WebForms MVP.ruleset" />
     <Content Include="Views\ViewServicesFrameworkExampleImplementation.ascx" />

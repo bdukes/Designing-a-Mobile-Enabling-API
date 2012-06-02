@@ -12,10 +12,13 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
         public void RegisterRoutes(IMapRoute mapRouteManager)
         {
             mapRouteManager.MapRoute(
-                "E",
-                "{controller}.ashx/{action}/{id}",
-                new { controller = "Example", action = "Index", id = string.Empty },
-                new[] { "E" });
+                "Engage/ServicesFrameworkExampleImplementation",
+                "{controller}.ashx/{action}",
+                new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
+            mapRouteManager.MapRoute(
+                "Engage/ServicesFrameworkExampleImplementation",
+                "{controller}/{action}",
+                new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
         }
     }
 }
