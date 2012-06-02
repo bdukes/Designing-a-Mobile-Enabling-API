@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CEA31C2-980A-415D-98EF-7977EDA64845}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engage.Dnn.ServicesFrameworkExampleImplementation</RootNamespace>
+    <AssemblyName>Engage.ServicesFrameworkExampleImplementation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>Correctness, Design, Globalization, Security, and WebForms MVP.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>Correctness, Design, Globalization, Security, and WebForms MVP.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\trialBin\</OutputPath>
+    <DefineConstants>TRACE;TRIAL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>Correctness, Design, Globalization, Security, and WebForms MVP.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetNuke, Version=5.1.1.98, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetNuke.Web, Version=5.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\DotNetNuke.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Engage.Dnn.Framework, Version=3.1.6.26594, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Framework\Engage.Dnn.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Engage.Framework, Version=3.1.4.26592, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Framework\Engage.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebFormsMvp, Version=0.9.7.4, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\WebFormsMvp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FeaturesController.cs" />
+    <Compile Include="ItemsController.cs" />
+    <Compile Include="Models\ViewModels\ViewServicesFrameworkExampleImplementationViewModel.cs" />
+    <Compile Include="Presenters\ViewServicesFrameworkExampleImplementationPresenter.cs" />
+    <Compile Include="ServiceRouter.cs" />
+    <Compile Include="Views\IViewServicesFrameworkExampleImplementationView.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ViewServicesFrameworkExampleImplementation.ascx.cs">
+      <DependentUpon>ViewServicesFrameworkExampleImplementation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ViewServicesFrameworkExampleImplementation.ascx.designer.cs">
+      <DependentUpon>ViewServicesFrameworkExampleImplementation.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <Content Include="Licenses\EULA-Enterprise.txt" />
+    <Content Include="Licenses\EULA-Professional.txt" />
+    <Content Include="Licenses\EULA-Standard.txt" />
+    <Content Include="Licenses\EULA-Trial.htm" />
+    <Content Include="Licenses\EULA-Trial.txt" />
+    <Content Include="References\DotNetNuke.Web.dll" />
+    <Content Include="References\DotNetNuke.Web.xml" />
+    <Content Include="References\DotNetNuke.xml" />
+    <Content Include="References\CodeAnalysis\WebFormsMvp.CodeAnalysisRules.VS2010.dll" />
+    <Content Include="References\Framework\Engage.Dnn.Framework.dll" />
+    <Content Include="References\Framework\Engage.Framework.dll" />
+    <Content Include="References\WebFormsMvp.dll" />
+    <Content Include="Licenses\EULA-Enterprise.htm" />
+    <Content Include="Licenses\EULA-Professional.htm" />
+    <Content Include="Licenses\EULA-Standard.htm" />
+    <Content Include="Uninstall.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\1.0.0.SqlDataProvider" />
+    <Content Include="References\DotNetNuke.dll" />
+    <None Include="EngageServicesFrameworkExampleImplementation.5.dnn" />
+    <None Include="EngageServicesFrameworkExampleImplementation.Build" />
+    <None Include="Correctness, Design, Globalization, Security, and WebForms MVP.ruleset" />
+    <Content Include="Views\ViewServicesFrameworkExampleImplementation.ascx" />
+    <None Include="WebForms MVP.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="module.css" />
+    <Content Include="ReleaseNotes_01.00.00.htm" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\App_LocalResources\ViewServicesFrameworkExampleImplementation.ascx.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.3\Microsoft.StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.3\Microsoft.StyleCop.Targets')" />
+  <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.Targets')" />
+  <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.5\StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.5\StyleCop.Targets')" />
+  <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.6\StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.6\StyleCop.Targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

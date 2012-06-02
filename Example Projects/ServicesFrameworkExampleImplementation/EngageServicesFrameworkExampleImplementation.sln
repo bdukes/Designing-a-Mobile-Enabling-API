@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngageServicesFrameworkExampleImplementation", "EngageServicesFrameworkExampleImplementation.csproj", "{6CEA31C2-980A-415D-98EF-7977EDA64845}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Trial|Any CPU = Trial|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CEA31C2-980A-415D-98EF-7977EDA64845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEA31C2-980A-415D-98EF-7977EDA64845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEA31C2-980A-415D-98EF-7977EDA64845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEA31C2-980A-415D-98EF-7977EDA64845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEA31C2-980A-415D-98EF-7977EDA64845}.Trial|Any CPU.ActiveCfg = Trial|Any CPU
+		{6CEA31C2-980A-415D-98EF-7977EDA64845}.Trial|Any CPU.Build.0 = Trial|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

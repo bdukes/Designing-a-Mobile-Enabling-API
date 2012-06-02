@@ -1,0 +1,79 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Engage: ServicesFrameworkExampleImplementation" type="Module" version="1.0.0">
+      <friendlyName>Engage: ServicesFrameworkExampleImplementation</friendlyName>
+      <description></description>
+      <owner>
+        <name>Engage Software</name>
+        <organization>Engage Software</organization>
+        <url>http://www.engagesoftware.com/</url>
+        <email>support@engagemodules.com</email>
+      </owner>
+      <license src="Licenses/EULA-Standard.htm"/>
+      <releaseNotes src="ReleaseNotes_1.0.0.htm" />
+      <dependencies>
+        <dependency type="CoreVersion">5.0.0</dependency>
+      </dependencies>
+      <components>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/Engage/ServicesFrameworkExampleImplementation</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules/Engage/ServicesFrameworkExampleImplementation</basePath>
+            <script type="Install">
+              <name>1.0.0.SqlDataProvider</name>
+              <version>1.0.0</version>
+            </script>
+            <script type="UnInstall">
+              <name>Uninstall.SqlDataProvider</name>
+              <version latestVersion="latestVersion">1.0.0</version>
+            </script>
+          </scripts>
+        </component>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>Engage: ServicesFrameworkExampleImplementation</moduleName>
+            <foldername>Engage/ServicesFrameworkExampleImplementation</foldername>
+            <businessControllerClass>Engage.Dnn.ServicesFrameworkExampleImplementation.FeaturesController</businessControllerClass>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Engage: ServicesFrameworkExampleImplementation</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey/>
+                    <controlSrc>DesktopModules/Engage/ServicesFrameworkExampleImplementation/Views/ViewServicesFrameworkExampleImplementation.ascx</controlSrc>
+                    <supportsPartialRendering>True</supportsPartialRendering>
+                    <controlType>View</controlType>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <name>Engage.ServicesFrameworkExampleImplementation.dll</name>
+              <version latestVersion="latestVersion">1.0.0</version>
+            </assembly>
+            <assembly>
+              <name>Engage.Framework.dll</name>
+              <version>3.1.1</version>
+            </assembly>
+            <assembly>
+              <name>Engage.Dnn.Framework.dll</name>
+              <version>3.1.1</version>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
