@@ -2,7 +2,7 @@ using System.Linq;
 
 namespace Engage.Dnn.ServicesFrameworkExampleImplementation
 {
-    using DotNetNuke.Web.Services;
+    using DotNetNuke.Web.Api;
 
     using Engage.Annotations;
 
@@ -11,12 +11,14 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
     {
         public void RegisterRoutes(IMapRoute mapRouteManager)
         {
-            mapRouteManager.MapRoute(
+            mapRouteManager.MapHttpRoute(
                 "Engage/ServicesFrameworkExampleImplementation",
+                "default with extension",
                 "{controller}.ashx/{action}",
                 new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
-            mapRouteManager.MapRoute(
+            mapRouteManager.MapHttpRoute(
                 "Engage/ServicesFrameworkExampleImplementation",
+                "default",
                 "{controller}/{action}",
                 new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
         }

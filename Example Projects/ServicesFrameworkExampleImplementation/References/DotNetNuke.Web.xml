@@ -4,22 +4,155 @@
         <name>DotNetNuke.Web</name>
     </assembly>
     <members>
+        <member name="M:DotNetNuke.Web.Api.AuthFilterBase.IsAuthorized(DotNetNuke.Web.Api.AuthFilterContext)">
+            <summary>
+            Tests if the request passes the authorization requirements
+            </summary>
+            <param name="context">The auth filter context</param>
+            <returns>True when authorization is succesful</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.AuthFilterBase.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Co-ordinates check of authorization and handles Auth failure.  Should rarely be overridden.
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="P:DotNetNuke.Web.Api.AuthFilterBase.AllowMultiple">
+            <summary>
+            Gets or sets a value indicating whether more than one instance of the indicated attribute can be specified for a single program element.
+            </summary>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.AuthFilterContext.HandleUnauthorizedRequest">
+            <summary>
+            Processes requests that fail authorization. This default implementation creates a new response with the
+            Unauthorized status code. Override this method to provide your own handling for unauthorized requests.
+            </summary>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.AuthorizeAttributeBase.IsAuthorized(DotNetNuke.Web.Api.AuthFilterContext)">
+            <summary>
+            Tests if the request passes the authorization requirements
+            </summary>
+            <param name="context">The auth filter context</param>
+            <returns>True when authorization is succesful</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.AuthorizeAttributeBase.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Called by framework at start of Auth process, check if auth should be skipped and handles auth failure.  Should rarely need to be overridden.
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.AuthorizeAttributeBase.SkipAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Skips this authorization step if anonymous attribute is applied, override if auth should never be skipped, or other conditions are required
+            </summary>
+            <param name="actionContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetNuke.Web.Api.IOverrideDefaultAuthLevel">
+            <summary>
+            Implementing this interface on an Auth filter will allow the filter to override the default
+            Host level auth provided by DnnController
+            </summary>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.Internal.Auth.AuthMessageHandlerBase.OnInboundRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            A chance to process inbound requests
+            </summary>
+            <param name="request">the request message</param>
+            <param name="cancellationToken">a cancellationtoken</param>
+            <returns>null normally, if a response is returned all inbound processing is terminated and the resposne is returned</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.Internal.Auth.AuthMessageHandlerBase.OnOutboundResponse(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)">
+            <summary>
+            A change to process outbound responses
+            </summary>
+            <param name="response">The response message</param>
+            <param name="cancellationToken">a cancellationtoken</param>
+            <returns>the responsemessage</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.RouteExtensions.GetNameSpaces(System.Web.Routing.Route)">
+            <summary>
+            Get Namespaces that are searched for controllers for this route
+            </summary>
+            <returns>Namespaces</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.RouteExtensions.GetNameSpaces(System.Web.Http.Routing.IHttpRoute)">
+            <summary>
+            Get Namespaces that are searched for controllers for this route
+            </summary>
+            <returns>Namespaces</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.RouteExtensions.GetName(System.Web.Routing.Route)">
+            <summary>
+            Get the name of the route
+            </summary>
+            <returns>Route name</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.RouteExtensions.GetName(System.Web.Http.Routing.IHttpRoute)">
+            <summary>
+            Get the name of the route
+            </summary>
+            <returns>Route name</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.RequireHostAttribute.IsAuthorized(DotNetNuke.Web.Api.AuthFilterContext)">
+            <summary>
+            Tests if the request passes the authorization requirements
+            </summary>
+            <param name="context">The auth filter context</param>
+            <returns>True when authorization is succesful</returns>
+        </member>
+        <member name="T:DotNetNuke.Web.Api.StringPassThroughMediaTypeFormatter">
+            <summary>
+            A MediaTypeFormatter that simply allows strings to pass through WebAPI and be associated with the specified MIME type
+            </summary>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.StringPassThroughMediaTypeFormatter.#ctor">
+            <summary>
+            Initialize a formatter that can handle text/plain and text/html
+            </summary>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.StringPassThroughMediaTypeFormatter.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initialize a formatter that can handle the specified media types
+            </summary>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.UrlHelperExtensions.DnnLink(System.Web.Http.Routing.UrlHelper,System.String,System.String,System.Object)">
+            <summary>
+            Generate WebAPI Links compatible with DNN Services Framework
+            </summary>
+            <param name="urlHelper">The UrlHelper</param>
+            <param name="moduleFolderName">ModuleFolderName for the route</param>
+            <param name="routeName">RouteName for the route</param>
+            <param name="routeValues">Values to be passed to the route</param>
+            <returns>a url</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.Api.UrlHelperExtensions.DnnLink(System.Web.Http.Routing.UrlHelper,System.String,System.String,System.Object,DotNetNuke.Entities.Portals.PortalAliasInfo)">
+            <summary>
+            Generate WebAPI Links compatible with DNN Services Framework
+            </summary>
+            <param name="urlHelper">The UrlHelper</param>
+            <param name="moduleFolderName">ModuleFolderName for the route</param>
+            <param name="routeName">RouteName for the route</param>
+            <param name="routeValues">Values to be passed to the route</param>
+            <param name="portalAliasInfo">The PortalAlias to use in the Url </param>
+            <returns>a url</returns>
+        </member>
         <member name="T:DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication">
             <summary>
             DotNetNuke Http Application. It will handle Start, End, BeginRequest, Error event for whole application.
             </summary>
         </member>
-        <member name="P:DotNetNuke.Web.Services.DnnController.PortalSettings">
+        <member name="P:DotNetNuke.Web.Api.DnnApiController.PortalSettings">
             <summary>
             PortalSettings for the current portal
             </summary>
         </member>
-        <member name="P:DotNetNuke.Web.Services.DnnController.UserInfo">
+        <member name="P:DotNetNuke.Web.Api.DnnApiController.UserInfo">
             <summary>
             UserInfo for the current user
             </summary>
         </member>
-        <member name="P:DotNetNuke.Web.Services.DnnController.ActiveModule">
+        <member name="P:DotNetNuke.Web.Api.DnnApiController.ActiveModule">
             <summary>
             ModuleInfo for the current module
             <remarks>Will be null unless a valid pair of module and tab ids were provided in the request</remarks>
@@ -40,70 +173,253 @@
             OnSavingSettings method is called just before the Settings are saved
             </summary>
         </member>
-        <member name="M:DotNetNuke.Web.Services.AuthenticatorBase.TryToAuthenticate(System.Web.HttpContextBase,System.Int32)">
-            <summary>
-            Attempts to authenticate the current request
-            </summary>
-            <param name="context">Context of the currect request</param>
-            <param name="portalId">PortalID to authenticate in</param>
-        </member>
-        <member name="T:DotNetNuke.Web.Services.AuthorizeAttributeBase">
-            <summary>
-            A base class for authorize attributes
-            <remarks>
-            This is based on the ASP.Net MVC AuthorizeAttribute, with an enhancemtn to pass AuthorizationContext to AuthorizeCore.
-            The code to deal with the cache and set the result should be common to all AuthorizationFilters</remarks>
-            </summary>
-        </member>
-        <member name="T:DotNetNuke.Web.Services.IOverrideDefaultAuthLevel">
-            <summary>
-            Implementing this interface on an Auth filter will allow the filter to override the default
-            Host level auth provided by DnnController
-            </summary>
-        </member>
-        <member name="P:DotNetNuke.Web.Services.DnnAuthorizeAttribute.RequiresHost">
-            <summary>
-            Indicates that Host level credentials are required
-            </summary>
-        </member>
-        <member name="P:DotNetNuke.Web.Services.DnnAuthorizeAttribute.AllowAnonymous">
-            <summary>
-            Allows authorization of anonymous users
-            <remarks>
-            AllowAnonymous is used to allow anonymous access to specific methods in a controller that has a higher DefaultAuthLevel
-            This setting will be ignored if any of User, StaticRoles or Host level access are also specified
-            </remarks>
-            </summary>
-        </member>
-        <member name="M:DotNetNuke.Web.Services.IMapRoute.MapRoute(System.String,System.String,System.Object,System.Object,System.String[])">
+        <member name="M:DotNetNuke.Web.Api.IMapRoute.MapHttpRoute(System.String,System.String,System.String,System.Object,System.Object,System.String[])">
             <summary>
             Sets up the route(s) for DotNetNuke services
             </summary>
             <param name="moduleFolderName">The name of the folder under DesktopModules in which your module resides</param>
+            <param name="routeName">A unique name for the route</param>
             <param name="url">The parameterized portion of the route</param>
             <param name="defaults">Default values for the route parameters</param>
             <param name="constraints">The constraints</param>
-            <param name="namespaces">The namespace(s) in which to locate the controllers for this route</param>
+            <param name="namespaces">The namespace(s) in which to search for the controllers for this route</param>
             <returns>A list of all routes that were registered.</returns>
+            <remarks>The combination of moduleFolderName and routeName must be unique for each route</remarks>
         </member>
-        <member name="M:DotNetNuke.Web.Services.IMapRoute.MapRoute(System.String,System.String,System.Object,System.String[])">
+        <member name="M:DotNetNuke.Web.Api.IMapRoute.MapHttpRoute(System.String,System.String,System.String,System.Object,System.String[])">
             <summary>
             Sets up the route(s) for DotNetNuke services
             </summary>
             <param name="moduleFolderName">The name of the folder under DesktopModules in which your module resides</param>
+            <param name="routeName">A unique name for the route</param>
             <param name="url">The parameterized portion of the route</param>
             <param name="defaults">Default values for the route parameters</param>
-            <param name="namespaces">The namespace(s) in which to locate the controllers for this route</param>
+            <param name="namespaces">The namespace(s) in which to search for the controllers for this route</param>
             <returns>A list of all routes that were registered.</returns>
+            <remarks>The combination of moduleFolderName and routeName must be unique for each route</remarks>
         </member>
-        <member name="M:DotNetNuke.Web.Services.IMapRoute.MapRoute(System.String,System.String,System.String[])">
+        <member name="M:DotNetNuke.Web.Api.IMapRoute.MapHttpRoute(System.String,System.String,System.String,System.String[])">
             <summary>
             Sets up the route(s) for DotNetNuke services
             </summary>
             <param name="moduleFolderName">The name of the folder under DesktopModules in which your module resides</param>
+            <param name="routeName">A unique name for the route</param>
             <param name="url">The parameterized portion of the route</param>
-            <param name="namespaces">The namespace(s) in which to locate the controllers for this route</param>
+            <param name="namespaces">The namespace(s) in which to search for the controllers for this route</param>
             <returns>A list of all routes that were registered.</returns>
+            <remarks>The combination of moduleFolderName and routeName must be unique for each route</remarks> 
+        </member>
+        <member name="M:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.CreateTemplate(Telerik.Web.UI.GridItemType)">
+            <summary>
+            Creates a ImageCommandColumnTemplate
+            </summary>
+            <returns>A ImageCommandColumnTemplate</returns>
+        </member>
+        <member name="M:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.Initialize">
+            <summary>
+            Initialises the Column
+            </summary>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.CommandName">
+            <summary>
+            Gets or sets the CommandName for the Column
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.EditMode">
+            <summary>
+            EditMode for the Column
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.ImageURL">
+            <summary>
+            Gets or sets the URL of the Image
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.IconKey">
+            <summary>
+            The Icon Key to obtain ImageURL
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.IconSize">
+            <summary>
+            The Icon Siz to obtain ImageURL
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.IconStyle">
+            <summary>
+            The Icon Style to obtain ImageURL
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.KeyField">
+            <summary>
+            The Key Field that provides a Unique key to the data Item
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.NavigateURL">
+            <summary>
+            Gets or sets the URL of the Link (unless DataBinding through KeyField)
+            </summary>
+            <value>A String</value>
+            <history>
+            	[cnurse]	02/17/2006	Created
+            </history>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.NavigateURLFormatString">
+            <summary>
+            Gets or sets the URL Formatting string
+            </summary>
+            <value>A String</value>
+            <history>
+            	[cnurse]	01/06/2006	Created
+            </history>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.OnClickJs">
+            <summary>
+            Javascript text to attach to the OnClick Event
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.ShowImage">
+            <summary>
+            Gets or sets whether an Image is displayed
+            </summary>
+            <remarks>Defaults to True</remarks>
+            <value>A Boolean</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.Text">
+            <summary>
+            Gets or sets the Text (for Header/Footer Templates)
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumn.VisibleField">
+            <summary>
+            An flag that indicates whether the buttons are visible.
+            </summary>
+            <value>A Boolean</value>
+        </member>
+        <member name="M:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.InstantiateIn(System.Web.UI.Control)">
+            <summary>
+            InstantiateIn instantiates the template (implementation of ITemplate)
+            </summary>
+            <remarks>
+            </remarks>
+            <param name="container">The parent container (DataGridItem)</param>
+        </member>
+        <member name="M:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.GetIsVisible(Telerik.Web.UI.GridItem)">
+            <summary>
+            Gets whether theButton is visible
+            </summary>
+            <param name="container">The parent container (DataGridItem)</param>
+        </member>
+        <member name="M:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.GetValue(Telerik.Web.UI.GridItem)">
+            <summary>
+            Gets the value of the key
+            </summary>
+            <param name="container">The parent container (DataGridItem)</param>
+        </member>
+        <member name="M:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.ItemDataBinding(System.Object,System.EventArgs)">
+            <summary>
+            Item_DataBinding runs when an Item of type GridItemType.Item is being data-bound
+            </summary>
+            <remarks>
+            </remarks>
+            <param name="sender"> The object that triggers the event</param>
+            <param name="e">An EventArgs object</param>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.CommandName">
+            <summary>
+            Gets or sets the CommandName for the Column
+            </summary>
+            <value>A String</value>
+            <history>
+            	[cnurse]	02/17/2006	Created
+            </history>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.DesignMode">
+            <summary>
+            Gets or sets the Design Mode of the Column
+            </summary>
+            <value>A Boolean</value>
+            <history>
+            	[cnurse]	02/24/2006	Created
+            </history>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.EditMode">
+            <summary>
+            Gets or sets the CommandName for the Column
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.ImageURL">
+            <summary>
+            Gets or sets the URL of the Image
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.ItemType">
+            <summary>
+            The type of Template to Create
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.KeyField">
+            <summary>
+            The Key Field that provides a Unique key to the data Item
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.NavigateURL">
+            <summary>
+            Gets or sets the URL of the Link (unless DataBinding through KeyField)
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.NavigateURLFormatString">
+            <summary>
+            Gets or sets the URL Formatting string
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.OnClickJs">
+            <summary>
+            Javascript text to attach to the OnClick Event
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.ShowImage">
+            <summary>
+            Gets or sets whether an Image is displayed
+            </summary>
+            <remarks>Defaults to True</remarks>
+            <value>A Boolean</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.Text">
+            <summary>
+            Gets or sets the Text (for Header/Footer Templates)
+            </summary>
+            <value>A String</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.Visible">
+            <summary>
+            An flag that indicates whether the buttons are visible (this is overridden if
+            the VisibleField is set)
+            changed
+            </summary>
+            <value>A Boolean</value>
+        </member>
+        <member name="P:DotNetNuke.Web.UI.WebControls.DnnGridImageCommandColumnTemplate.VisibleField">
+            <summary>
+            An flag that indicates whether the buttons are visible.
+            </summary>
+            <value>A Boolean</value>
         </member>
         <member name="T:DotNetNuke.Web.UI.WebControls.DnnMemberListControl">
             <summary>
