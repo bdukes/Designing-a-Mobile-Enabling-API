@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -16,7 +17,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
+    <OldToolsVersion>4.0</OldToolsVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,7 +31,7 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRules>
     </CodeAnalysisRules>
-    <CodeAnalysisRuleSet>Correctness, Design, Globalization, Security, and WebForms MVP.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Correctness, Design, Globalization, and Security.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -121,9 +122,9 @@
     <Content Include="References\DotNetNuke.Web.dll" />
     <Content Include="References\DotNetNuke.Web.xml" />
     <Content Include="References\DotNetNuke.xml" />
-    <Content Include="References\CodeAnalysis\WebFormsMvp.CodeAnalysisRules.VS2010.dll" />
     <Content Include="References\Framework\Engage.Dnn.Framework.dll" />
     <Content Include="References\Framework\Engage.Framework.dll" />
+    <Content Include="References\System.Web.Mvc.dll" />
     <Content Include="References\WebFormsMvp.dll" />
     <Content Include="Licenses\EULA-Enterprise.htm" />
     <Content Include="Licenses\EULA-Professional.htm" />
@@ -135,9 +136,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="EngageServicesFrameworkExampleImplementation.Build" />
-    <None Include="Correctness, Design, Globalization, Security, and WebForms MVP.ruleset" />
+    <None Include="Correctness, Design, Globalization, and Security.ruleset">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\ViewServicesFrameworkExampleImplementation.ascx" />
-    <None Include="WebForms MVP.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="module.css" />
@@ -147,8 +149,13 @@
   <ItemGroup>
     <Content Include="Views\App_LocalResources\ViewServicesFrameworkExampleImplementation.ascx.resx" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.3\Microsoft.StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.3\Microsoft.StyleCop.Targets')" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.Targets')" />
   <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.5\StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.5\StyleCop.Targets')" />
