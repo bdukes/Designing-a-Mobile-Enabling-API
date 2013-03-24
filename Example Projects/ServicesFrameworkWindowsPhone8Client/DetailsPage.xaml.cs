@@ -31,7 +31,7 @@ namespace ServicesFrameworkWindowsPhone8Client
                 if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))
                 {
                     int index = int.Parse(selectedIndex);
-                    DataContext = App.ViewModel.Items[index];
+                    DataContext = App.ViewModel.Messages[index];
                 }
             }
         }

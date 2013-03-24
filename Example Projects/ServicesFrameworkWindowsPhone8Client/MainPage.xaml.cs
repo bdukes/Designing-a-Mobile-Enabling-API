@@ -26,7 +26,7 @@ namespace ServicesFrameworkWindowsPhone8Client
             //BuildLocalizedApplicationBar();
         }
 
-        // Load data for the ViewModel Items
+        // Load data for the ViewModel Messages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (!App.ViewModel.IsDataLoaded)
@@ -43,7 +43,7 @@ namespace ServicesFrameworkWindowsPhone8Client
                 return;
 
             // Navigate to the new page
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (MainLongListSelector.SelectedItem as ItemViewModel).ID, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (MainLongListSelector.SelectedItem as MessageViewModel).ID, UriKind.Relative));
 
             // Reset selected item to null (no selection)
             MainLongListSelector.SelectedItem = null;
