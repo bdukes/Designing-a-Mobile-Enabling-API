@@ -75,7 +75,7 @@ namespace ServicesFrameworkClientExample
                     this.IsDataLoaded = true;
                 };
 
-            webClient.UploadStringAsync(new Uri("http://dnn6.dev/DesktopModules/Engage/ServicesFrameworkExampleImplementation/API/Items.ashx/Get"), "POST", string.Empty);
+            webClient.UploadStringAsync(new Uri("http://dnn7.dev/DesktopModules/Engage/ServicesFrameworkExampleImplementation/API/Items.ashx/Get"), "POST", string.Empty);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

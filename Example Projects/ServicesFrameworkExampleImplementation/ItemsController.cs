@@ -13,6 +13,7 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
 {
     using System.Net;
     using System.Net.Http;
+    using System.Runtime.Serialization;
     using System.Web.Http;
 
     using DotNetNuke.Web.Api;
@@ -20,122 +21,47 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
     [AllowAnonymous]
     public class ItemsController : DnnApiController
     {
+        [DataContract]
+        private class Item
+        {
+            [DataMember]
+            public string LineOne { get; private set; }
+
+            [DataMember]
+            public string LineTwo { get; private set; }
+
+            [DataMember]
+            public string LineThree { get; private set; }
+
+            public Item(string lineOne, string lineTwo, string lineThree)
+            {
+                this.LineOne = lineOne;
+                this.LineTwo = lineTwo;
+                this.LineThree = lineThree;
+            }
+        }
+
+        [HttpPost]
         public HttpResponseMessage Get()
         {
             var data = new[]
                            {
-                               new
-                                   {
-                                       LineOne = "runtime one",
-                                       LineTwo = "Maecenas praesent accumsan bibendum",
-                                       LineThree =
-                                   "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime two",
-                                       LineTwo = "Dictumst eleifend facilisi faucibus",
-                                       LineThree =
-                                   "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime three",
-                                       LineTwo = "Habitant inceptos interdum lobortis",
-                                       LineThree =
-                                   "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime four",
-                                       LineTwo = "Nascetur pharetra placerat pulvinar",
-                                       LineThree =
-                                   "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime five",
-                                       LineTwo = "Maecenas praesent accumsan bibendum",
-                                       LineThree =
-                                   "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime six",
-                                       LineTwo = "Dictumst eleifend facilisi faucibus",
-                                       LineThree =
-                                   "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime seven",
-                                       LineTwo = "Habitant inceptos interdum lobortis",
-                                       LineThree =
-                                   "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime eight",
-                                       LineTwo = "Nascetur pharetra placerat pulvinar",
-                                       LineThree =
-                                   "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime nine",
-                                       LineTwo = "Maecenas praesent accumsan bibendum",
-                                       LineThree =
-                                   "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime ten",
-                                       LineTwo = "Dictumst eleifend facilisi faucibus",
-                                       LineThree =
-                                   "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime eleven",
-                                       LineTwo = "Habitant inceptos interdum lobortis",
-                                       LineThree =
-                                   "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime twelve",
-                                       LineTwo = "Nascetur pharetra placerat pulvinar",
-                                       LineThree =
-                                   "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime thirteen",
-                                       LineTwo = "Maecenas praesent accumsan bibendum",
-                                       LineThree =
-                                   "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime fourteen",
-                                       LineTwo = "Dictumst eleifend facilisi faucibus",
-                                       LineThree =
-                                   "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime fifteen",
-                                       LineTwo = "Habitant inceptos interdum lobortis",
-                                       LineThree =
-                                   "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"
-                                   },
-                               new
-                                   {
-                                       LineOne = "runtime sixteen",
-                                       LineTwo = "Nascetur pharetra placerat pulvinar",
-                                       LineThree =
-                                   "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"
-                                   },
+                               new Item("runtime one", "Maecenas praesent accumsan bibendum", "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu"),
+                               new Item("runtime two", "Dictumst eleifend facilisi faucibus", "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus"),
+                               new Item("runtime three", "Habitant inceptos interdum lobortis", "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent"),
+                               new Item("runtime four", "Nascetur pharetra placerat pulvinar", "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos"),
+                               new Item("runtime five", "Maecenas praesent accumsan bibendum", "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"),
+                               new Item("runtime six", "Dictumst eleifend facilisi faucibus", "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"),
+                               new Item("runtime seven", "Habitant inceptos interdum lobortis", "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"),
+                               new Item("runtime eight", "Nascetur pharetra placerat pulvinar", "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"),
+                               new Item("runtime nine", "Maecenas praesent accumsan bibendum", "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu"),
+                               new Item("runtime ten", "Dictumst eleifend facilisi faucibus", "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus"),
+                               new Item("runtime eleven", "Habitant inceptos interdum lobortis", "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent"),
+                               new Item("runtime twelve", "Nascetur pharetra placerat pulvinar", "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos"),
+                               new Item("runtime thirteen", "Maecenas praesent accumsan bibendum", "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"),
+                               new Item("runtime fourteen", "Dictumst eleifend facilisi faucibus", "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"),
+                               new Item("runtime fifteen", "Habitant inceptos interdum lobortis", "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"),
+                               new Item("runtime sixteen", "Nascetur pharetra placerat pulvinar", "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"),
                            };
             return this.Request.CreateResponse(HttpStatusCode.OK, data);
         }
