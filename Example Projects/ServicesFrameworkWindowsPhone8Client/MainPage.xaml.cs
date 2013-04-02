@@ -43,7 +43,7 @@ namespace ServicesFrameworkWindowsPhone8Client
                 return;
 
             // Navigate to the new page
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (MainLongListSelector.SelectedItem as MessageViewModel).ID, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?messageId=" + ((MainViewModel.MessageViewModel)MainLongListSelector.SelectedItem).ID, UriKind.Relative));
 
             // Reset selected item to null (no selection)
             MainLongListSelector.SelectedItem = null;

@@ -4,12 +4,12 @@
     xmlns:vm="clr-namespace:ServicesFrameworkWindowsPhone8Client.ViewModels">
 
     <vm:MainViewModel.Messages>
-        <vm:MessageViewModel ID="0" To="Jimmy" From="design one" Subject="Maecenas praesent accumsan bibendum" Body="Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"/>
-        <vm:MessageViewModel ID="1" To="Jimmy" From="design two" Subject="Dictumst eleifend facilisi faucibus" Body="Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"/>
-        <vm:MessageViewModel ID="2" To="Jimmy" From="design three" Subject="Habitant inceptos interdum lobortis" Body="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
-        <vm:MessageViewModel ID="3" To="Jimmy" From="design four" Subject="Nascetur pharetra placerat pulvinar" Body="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
-        <vm:MessageViewModel ID="4" To="Jimmy" From="design five" Subject="Sagittis senectus sociosqu suscipit" Body="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
-        <vm:MessageViewModel ID="5" To="Jimmy" From="design six" Subject="Torquent ultrices vehicula volutpat" Body="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/>
+        <vm:MainViewModel.MessageViewModel ID="0" To="Jimmy" From="design one" Subject="Maecenas praesent accumsan bibendum" Body="Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"/>
+        <vm:MainViewModel.MessageViewModel ID="1" To="Jimmy" From="design two" Subject="Dictumst eleifend facilisi faucibus" Body="Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"/>
+        <vm:MainViewModel.MessageViewModel ID="2" To="Jimmy" From="design three" Subject="Habitant inceptos interdum lobortis" Body="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
+        <vm:MainViewModel.MessageViewModel ID="3" To="Jimmy" From="design four" Subject="Nascetur pharetra placerat pulvinar" Body="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
+        <vm:MainViewModel.MessageViewModel ID="4" To="Jimmy" From="design five" Subject="Sagittis senectus sociosqu suscipit" Body="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
+        <vm:MainViewModel.MessageViewModel ID="5" To="Jimmy" From="design six" Subject="Torquent ultrices vehicula volutpat" Body="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/>
     </vm:MainViewModel.Messages>
 
 </vm:MainViewModel>

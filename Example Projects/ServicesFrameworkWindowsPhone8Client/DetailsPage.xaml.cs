@@ -27,11 +27,11 @@ namespace ServicesFrameworkWindowsPhone8Client
         {
             if (DataContext == null)
             {
-                string selectedIndex = "";
-                if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))
+                string messageId;
+                if (NavigationContext.QueryString.TryGetValue("messageId", out messageId))
                 {
-                    int index = int.Parse(selectedIndex);
-                    DataContext = App.ViewModel.Messages[index];
+                    var id = int.Parse(messageId);
+                    DataContext = App.ViewModel.Messages.Single(m => m.ID == id);
                 }
             }
         }
