@@ -41,7 +41,6 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
             }
         }
 
-        [HttpPost]
         public HttpResponseMessage Get()
         {
             var data = new[]

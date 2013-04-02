@@ -14,12 +14,12 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
             mapRouteManager.MapHttpRoute(
                 "Engage/ServicesFrameworkExampleImplementation",
                 "default with extension",
-                "{controller}.ashx/{action}",
+                "{controller}.ashx",
                 new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
             mapRouteManager.MapHttpRoute(
                 "Engage/ServicesFrameworkExampleImplementation",
                 "default",
-                "{controller}/{action}",
+                "{controller}",
                 new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
         }
     }
