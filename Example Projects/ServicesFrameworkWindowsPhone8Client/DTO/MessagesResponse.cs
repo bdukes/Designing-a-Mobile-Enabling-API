@@ -15,13 +15,11 @@
             public int MessageId { get; set; }
             public string Body { get; set; }
             public string Subject { get; set; }
-            public string Conversation { get; set; }
-            public string FromUserName { get; set; }
-            public string ToUserName { get; set; }
-            public string ToRoleName { get; set; }
-            public DateTimeOffset MessageDate { get; set; }
-            public string Status { get; set; }
-            public bool AllowReply { get; set; }
+            public int ConversationId { get; set; }
+            public string From { get; set; }
+            public string To { get; set; }
+            public string MessageDate { get; set; }
+            public bool ReplyAllAllowed { get; set; }
         }
     }
 }
