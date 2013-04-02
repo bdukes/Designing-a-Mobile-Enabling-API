@@ -45,6 +45,7 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
             this.messagingController = messagingController;
         }
 
+        ////[ValidateAntiForgeryToken]
         public HttpResponseMessage Get()
         {
             try

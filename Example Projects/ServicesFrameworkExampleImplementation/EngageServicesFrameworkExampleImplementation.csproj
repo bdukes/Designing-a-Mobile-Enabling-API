@@ -63,6 +63,11 @@
       <HintPath>References\DotNetNuke.Web.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DotNetNuke.Web.Client, Version=6.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\DotNetNuke.Web.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Engage.Dnn.Framework, Version=3.1.6.26594, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\Framework\Engage.Dnn.Framework.dll</HintPath>
@@ -130,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <Content Include="References\DotNetNuke.Web.Client.dll" />
     <Content Include="ReleaseNotes_02.00.00.htm" />
     <Content Include="Licenses\EULA-Enterprise.txt" />
     <Content Include="Licenses\EULA-Professional.txt" />

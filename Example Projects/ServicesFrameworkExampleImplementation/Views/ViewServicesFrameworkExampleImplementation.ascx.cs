@@ -11,6 +11,7 @@
 
 namespace Engage.Dnn.ServicesFrameworkExampleImplementation
 {
+    using DotNetNuke.Framework;
     using DotNetNuke.Web.Mvp;
 
     using WebFormsMvp;
@@ -20,5 +21,9 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
     [PresenterBinding(typeof(ViewServicesFrameworkExampleImplementationPresenter))]
     public partial class ViewServicesFrameworkExampleImplementation : ModuleView<ViewServicesFrameworkExampleImplementationViewModel>, IViewServicesFrameworkExampleImplementationView
     {
+        protected ViewServicesFrameworkExampleImplementation()
+        {
+            ServicesFramework.Instance.RequestAjaxAntiForgerySupport();
+        }
     }
 }
