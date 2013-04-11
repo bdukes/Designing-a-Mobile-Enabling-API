@@ -12,10 +12,10 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
         public void RegisterRoutes(IMapRoute mapRouteManager)
         {
             mapRouteManager.MapHttpRoute(
-                "Engage/ServicesFrameworkExampleImplementation",
-                "default with extension",
-                "{controller}.ashx",
-                new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
+                moduleFolderName: "Engage/ServicesFrameworkExampleImplementation",
+                routeName: "default with extension",
+                url: "{controller}.ashx",
+                namespaces: new[] { "Engage.Dnn.ServicesFrameworkExampleImplementation" });
             mapRouteManager.MapHttpRoute(
                 "Engage/ServicesFrameworkExampleImplementation",
                 "default",
