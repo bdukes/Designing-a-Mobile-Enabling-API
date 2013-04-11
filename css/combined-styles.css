@@ -217,6 +217,12 @@ q strong {
 #title .sponsors {
     text-align: center;
 }
+#title .sponsors img {
+    width: 45%;
+}
+#title .sponsors :first-child img {
+    width: 75%;
+}
 #services-framework {
     text-align: center;
 }
@@ -231,8 +237,12 @@ q strong {
 #sponsors h3 {
     margin: 0;
 }
+#sponsors img {
+    max-width: 30%;
+}
 #sponsors a#dnn-logo img {
     width: 420px;
+    max-width: 420px;
 }
 
 .hint {
