@@ -72,8 +72,8 @@ html {
 }
 body {
     min-height: 740px;
-    background-image: url(../img/Day%20of%20DNN.png), url(../img/charlotte.png), url(../img/QCDUG.png);
-    background-position: left top, right bottom, left bottom;
+    background-image: url(../img/Southern%20Fried%20DNN.png), url(../img/QCDUG.png);
+    background-position: left bottom, right bottom;
     background-repeat: no-repeat;
 }
 
@@ -88,12 +88,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1em 0;
 }
 h1 {
-    font-size: 52px;
+    font-size: 50px;
 }
-h2, h3 {
+h2 {
     font-size:40px;
 }
-h4, h5, h6 {
+h3, h4, h5, h6 {
     font-size:35px;
 }
 
@@ -212,7 +212,7 @@ q strong {
 
 #title h1 {
     line-height: 72px;
-    margin: 100px 0 0 0;
+    margin: 50px 0 0 0;
 }
 #title .sponsors {
     text-align: center;
