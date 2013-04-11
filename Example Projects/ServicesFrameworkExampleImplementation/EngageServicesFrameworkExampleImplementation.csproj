@@ -116,6 +116,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExampleController.cs" />
     <Compile Include="MessagesController.cs" />
     <Compile Include="FeaturesController.cs" />
     <Compile Include="ItemsController.cs" />
