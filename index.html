@@ -50,33 +50,68 @@
             <li>Benefits</li>
             <li>Usage</li>
         </ul>
-        <h3>Prerequisites</h3>
-        <ul>
-            <li>Familiar with DNN development (C#)</li>
-            <li>Familiar with Ajax (via jQuery)</li>
-            <li>Basic understanding of MVC pattern</li>
         </ul>
     </div>
     <div id="technology-overview" class="step" data-x="2000">
         <h3>Technology Overview</h3>
         <ul>
             <li>
-                Based on <strong>ASP.NET MVC 2</strong>
-                <ul><li>Probably <strong>ASP.NET Web API</strong> in the near future</li></ul>
-            </li>
-            <li>
-                Implement <strong>controllers</strong> to process requests
+                Based on <strong>ASP.NET Web API</strong>
             </li>
             <li>
                 Register <strong>routes</strong> to direct requests to controller <strong>actions</strong>
             </li>
             <li>
-                Very easy to provide <strong><abbr title="JavaScript Object Notation">JSON</abbr></strong> responses
-                <ul><li><strong>Web API</strong> would provide more serialization options</li></ul>
+                Implement <strong>controllers</strong> to process requests
+            </li>
+            <li>
+                Try to let the framework handle <strong>serialization</strong> into <abbr title="JavaScript Object Notation">JSON</abbr> or <abbr title="eXtensible Markup Language">XML</abbr>
             </li>
         </ul>
     </div>
-    <div id="controllers" class="step" data-x="3000">
+    <div id="routes" class="step" data-x="3000">
+        <h3>Routes</h3>
+        <ul>
+            <li>
+                Implement <code>IServiceRouteMapper</code> interface
+                <ul><li><code>void RegisterRoutes(IMapRoute)</code></li></ul>
+            </li>
+            <li>
+                Call <code>MapHttpRoute</code> method on <code>IMapRoute</code> argument
+            </li>
+            <li>
+                Services route to <code>/DesktopModules/Module/API/[route]</code>
+            </li>
+            <li>
+                Define <strong>placeholders</strong> or <strong>defaults</strong> for the controller
+            </li>
+            <li>
+                By default, the <strong>action</strong> is determined by the HTTP verb
+            </li>
+        </ul>
+    </div>
+    <div id="route-example" class="step code-step second-step" data-x="3000" data-z="-1000" data-rotate="90">
+        <h3>Route Example</h3>
+        <pre class="brush: csharp">
+        /*/DesktopModules/Example/S/API/Example.ashx/Hello*/
+        namespace Example.Dnn.Services {
+            using DotNetNuke.Web.Api;
+
+            public class Mapperator : IServiceRouteMapper {
+                public void RegisterRoutes(IMapRoute mapper) {
+                    mapper.MapHttpRoute(
+                        moduleFolderName: "Example/S", 
+                        routeName: "default",
+                        url: "{controller}.ashx", 
+                        namespaces: new[] { 
+                            "Example.Dnn.Services",
+                        });
+                }
+            }
+        }
+        </pre>
+    </div>
+    <div id="controllers" class="step" data-x="4000">
         <h3>Controllers</h3>
         <ul>
             <li>
@@ -94,7 +129,7 @@
             </li>
         </ul>
     </div>
-    <div id="controller-example" class="step code-step second-step" data-x="3000" data-z="-1000" data-rotate="90">
+    <div id="controller-example" class="step code-step second-step" data-x="4000" data-z="-1000" data-rotate="90">
         <h3>Controller Example</h3>
         <pre class="brush: csharp">
         namespace Example.Dnn.Services {
@@ -110,69 +145,6 @@
                 }
             }
         }
-        </pre>
-    </div>
-    <div id="routes" class="step" data-x="4000">
-        <h3>Routes</h3>
-        <ul>
-            <li>
-                Implement <code>IServiceRouteMapper</code> interface
-                <ul><li><code>void RegisterRoutes(IMapRoute)</code></li></ul>
-            </li>
-            <li>
-                Call <code>MapRoute</code> method on <code>IMapRoute</code> argument
-            </li>
-            <li>
-                Services route to <code>/DesktopModules/Module/API/[route]</code>
-            </li>
-            <li>
-                Define <strong>placeholders</strong> or <strong>defaults</strong> for the controller &amp; action
-            </li>
-            <li>
-                Can define route <strong>constraints</strong>, also
-                <ul>
-                  <li>Regular expression</li>
-                  <li>Implement <code>IRouteConstraint</code>'s <code>Match</code> method</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div id="route-example" class="step code-step second-step" data-x="4000" data-z="-1000" data-rotate="90">
-        <h3>Route Example</h3>
-        <pre class="brush: csharp">
-        /*/DesktopModules/Example/S/API/Example.ashx/Hello*/
-        namespace Example.Dnn.Services {
-            using DotNetNuke.Web.Services;
-
-            public class Mapperator : IServiceRouteMapper {
-                public void RegisterRoutes(IMapRoute mapper) {
-                    mapper.MapRoute(
-                        moduleFolderName: "Example/S", 
-                        url: "{controller}.ashx/{action}", 
-                        namespaces: new[] { 
-                            "Example.Dnn.Services",
-                        });
-                }
-            }
-        }
-        </pre>
-    </div>
-    <div id="route-example-with-defaults-and-constraint" class="step code-step second-step" data-x="4000" data-z="-2000" data-rotate="90">
-        <h3>Route Example with Defaults and Constraint</h3>
-        <pre class="brush: csharp">
-        /*/DesktopModules/Example/Services/API/Ex/Find/123*/
-        mapper.MapRoute(
-            moduleFolderName: "Example/Services",
-            url: "Ex/{action}/{id}",
-            defaults: new {
-                controller = "Example",
-                action = "Index", 
-                id = string.Empty,
-            },
-            constraints: new { id = @"\d+", },
-            namespaces: new[] {
-                "Example.Dnn.Services",
-            });
         </pre>
     </div>
     <div id="authentication" class="step" data-x="5000">
