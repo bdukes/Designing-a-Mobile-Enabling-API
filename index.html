@@ -149,52 +149,36 @@
         }
         </pre>
     </div>
-    <div id="authentication" class="step" data-x="5000">
-        <h3>Authentication</h3>
-        <ul>
-            <li>
-                <strong>Basic</strong> access authentication
-                <ul>
-                    <li>Requires <abbr title="Secure HyperText Transport Protocol">HTTPS</abbr>/<abbr title="Secure Sockets Layer">SSL</abbr> for security</li>
-                    <li>Passes credentials on each request</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Digest</strong> access authentication
-                <ul>
-                    <li>Uses MD5 for security</li>
-                    <li>Windows Phone 7 does not natively support digest</li>
-                </ul>
-            </li>
-            <li>
-                More to come
-            </li>
-            <li>
-                Anti-Forgery Token
-            </li>
-        </ul>
-    </div>
-    <div id="authorization" class="step" data-x="6000">
+    <div id="authorization" class="step" data-x="5000">
         <h3>Authorization</h3>
         <ul>
+            <li>Only <strong>host-level</strong> access by default
+                <ul>
+                    <li>Different than Web API defaults</li>
+                </ul>
+            </li>
+            <li>
+                <code>AllowAnonymousAttribute</code>
+                <ul>
+                    <li>Disables all authorization</li>
+                    <li>Only use on <strong>actions</strong>, never at controller level</li>
+                </ul>
+            </li>
             <li>
                 <code>DnnAuthorizeAttribute</code>
                 <ul>
-                    <li>Disallows anonymous access by default</li>
-                    <li>Can provide static list of role names</li>
-                    <li>Can limit to host access only</li>
+                    <li>Static list of role names</li>
                 </ul>
             </li>
             <li>
-                <code>AcceptVerbsAttribute</code>
+                <code>RequireHostAttribute</code>
                 <ul>
-                    <li>Provide bitwise combination of allowed verbs</li>
-                    <li>Can also use <code>HttpPost</code>, <code>HttpGet</code>, etc.</li>
+                    <li>Override looser authentication from controller</li>
                 </ul>
             </li>
         </ul>
     </div>
-    <div id="authorization-2" class="step second-step" data-x="6000" data-z="-1000">
+    <div id="authorization-2" class="step second-step" data-x="5000" data-z="-1000">
         <h3>Authorization</h3>
         <ul>
             <li>
@@ -218,6 +202,28 @@
                     <li>Requires <code>ModuleId</code> and <code>TabId</code> in request</li>
                 </ul>
             </li>
+        </ul>
+    </div>
+    <div id="authentication" class="step" data-x="6000">
+        <h3>Authentication</h3>
+        <ul>
+            <li><strong>Forms</strong> authentication cookie (AJAX)</li>
+            <li>
+                <strong>Basic</strong> access authentication
+                <ul>
+                    <li>Requires <abbr title="Secure HyperText Transport Protocol">HTTPS</abbr>/<abbr title="Secure Sockets Layer">SSL</abbr> for security</li>
+                    <li>Passes credentials on each request</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Digest</strong> access authentication
+                <ul>
+                    <li>Uses MD5 for "security"</li>
+                    <li>Passes credentials on each request</li>
+                </ul>
+            </li>
+            <li>Need an OAuth (or other token-passing) solution</li>
+            <li>Anti-Forgery Token</li>
         </ul>
     </div>
     <div id="dnn-context" class="step" data-x="7000">

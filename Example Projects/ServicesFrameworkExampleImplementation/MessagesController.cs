@@ -20,12 +20,10 @@ namespace Engage.Dnn.ServicesFrameworkExampleImplementation
 
     using DotNetNuke.Common.Utilities;
     using DotNetNuke.Security;
-    using DotNetNuke.Security.Roles;
     using DotNetNuke.Services.Exceptions;
     using DotNetNuke.Services.Messaging;
     using DotNetNuke.Services.Messaging.Data;
     using DotNetNuke.Services.Social.Messaging.Internal;
-    using DotNetNuke.Services.Social.Notifications;
     using DotNetNuke.Web.Api;
 
     [SupportedModules("DotNetNuke.Modules.CoreMessaging,Engage: ServicesFrameworkExampleImplementation")]
