@@ -251,12 +251,8 @@
         using DotNetNuke.Framework;
 
         public class MyModuleControl : ModuleView&lt;MyViewModel> {
-            protected override void OnInit(EventArgs e) {
-                base.OnInit(e);
-
-                var sf = ServicesFramework.Instance;
-                sf.RequestAjaxScriptSupport();
-                sf.RequestAjaxAntiForgerySupport();
+            protected MyModuleControl() {
+                ServicesFramework.Instance.RequestAjaxAntiForgerySupport();
             }
         }
         </pre>
@@ -266,12 +262,32 @@
         <pre class="brush: js">
         var sf = $.ServicesFramework(&lt;%:ModuleContext.ModuleId%>);
         $.ajax({
-            type: 'POST',
-            url: sf.getServiceRoot('Example/S') + 'Example/Hello',
+            type: 'GET',
+            url: sf.getServiceRoot('Example/S') + 'Example.ashx',
             beforeSend: sf.setModuleHeaders,
-            data: sf.getAntiForgeryProperty({ /*...*/ })
+            data: {}
         }).done(function (data) { /*...*/ })
           .fail(function (xhr, status) { /*...*/ });
+        </pre>
+    </div>
+    <div id="usage-phone-request" class="step code-step second-step" data-x="8000" data-z="-3000" data-rotate="90">
+        <h3>Usage &#x2013; Phone Request</h3>
+        <pre class="brush: csharp">
+            var requestUri = new Uri("http://dnn7.dev/DesktopModules/Example/S/API/Example.ashx");
+            var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
+            request.Headers.Add("ModuleId", "1740");
+            request.Headers.Add("TabId", "56");
+
+            var client = new HttpClient(new HttpClientHandler { 
+                Credentials = new NetworkCredential("host", "pa$$") 
+            });
+            var response = await client.SendAsync(request);
+            if (!response.IsSuccessStatusCode) {
+                // TODO: show error
+                return;
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
         </pre>
     </div>
     <div id="wrap-up" class="step" data-x="9000">
