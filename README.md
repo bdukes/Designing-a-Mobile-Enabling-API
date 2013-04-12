@@ -1,7 +1,7 @@
 Designing a Mobile-Enabling API
 ============
 
-This is a presentation created for the 2012 Day of DotNetNuke in Charlotte, NC.
+This is a presentation created for the 2013 Southern Fried Day of DotNetNuke in Charlotte, NC.
 
 It's using the impress.js presentation framework, and this repository is forked from that one as a starting point.
 
